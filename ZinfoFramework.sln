@@ -7,7 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-FrameWorks", "1-FrameWork
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZinfoFramework.HeadlessCrawler", "ZinfoFramework.HeadlessCrawler\ZinfoFramework.HeadlessCrawler.csproj", "{071AF4C7-3CF4-4E93-A535-14371536D661}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4ADF7BD4-FF51-464A-8F3F-910891DE1FB6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Test", "2-Test", "{4ADF7BD4-FF51-464A-8F3F-910891DE1FB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B95BE4F3-C4EE-463E-B5DD-0BC7C3E19A02}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
