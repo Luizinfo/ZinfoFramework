@@ -25,7 +25,7 @@ namespace ZinfoFramework.HeadlessCrawler.Core
                         continue;
 
                     var nome = c.Substring(0,index);
-                    var valor = c.Substring(index).Replace("=","");
+                    var valor = c.Substring(index+1);
 
                     result.Remove(nome); //remove se existir
                     result.Add(nome, valor);
