@@ -16,5 +16,19 @@
         /// </code>
         /// </example>
         public static int? TryParseIntNullable(string value) => int.TryParse(value, out int integrer) ? (int?)integrer : null;
+
+        /// <summary>
+        /// Método que informa se o número informado é ímpar.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns>true se o número for ímpar e false se for par.</returns>
+        public static bool IsOdd(this int x) => x.IsEven() ? false : true;
+
+        /// <summary>
+        /// Método que informa se o número informado é par.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns>true se o número for par e false se for ímpar.</returns>
+        public static bool IsEven(this int x) => (x % 2 == 0) ? true : false;
     }
 }

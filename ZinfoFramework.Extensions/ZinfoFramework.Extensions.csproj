@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Luiz Antonio</Authors>
+    <Company>Luiz AntonioLuiz Antonio</Company>
+    <Product>ZinfoFramework</Product>
+    <PackageProjectUrl>https://github.com/Luizinfo/ZinfoFramework</PackageProjectUrl>
+    <PackageReleaseNotes>--Start Version</PackageReleaseNotes>
+    <Description>Help Extensions</Description>
   </PropertyGroup>
 
   <ItemGroup>

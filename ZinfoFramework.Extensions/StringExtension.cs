@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -8,7 +9,7 @@ using System.Text.RegularExpressions;
 namespace ZinfoFramework.Extensions
 {
     /// <summary>
-    /// Extensões útes de <c>string</c> que podem ser utilizadas em vários cenários.
+    /// Extensões úteis de <c>string</c> que podem ser utilizadas em vários cenários.
     /// </summary>
     public static class StringExtension
     {
@@ -21,7 +22,7 @@ namespace ZinfoFramework.Extensions
         /// <example>
         /// <code>
         /// var valor = "Um valor";
-        /// var valorSemPrimeiroCaractere = valor.ToWithoutFirstCharacter(); 
+        /// var valorSemPrimeiroCaractere = valor.ToWithoutFirstCharacter();
         /// // <c>valorSemPrimeiroCaractere</c> terá o resultado "m valor".
         /// </code>
         /// </example>
@@ -33,9 +34,8 @@ namespace ZinfoFramework.Extensions
             return value.Length == 1 ? string.Empty : value.Substring(1);
         }
 
-
         /// <summary>
-        /// Extrai parte de uma string a partir de duas strings como delimitadoras. 
+        /// Extrai parte de uma string a partir de duas strings como delimitadoras.
         /// O método é case sensitive.
         /// </summary>
         /// <param name="value">String completa com a expressão necessária</param>
@@ -83,7 +83,7 @@ namespace ZinfoFramework.Extensions
         }
 
         /// <summary>
-        /// Retorna uma string somente com números. Caso não tenha número é retornado uma string vazia 
+        /// Retorna uma string somente com números. Caso não tenha número é retornado uma string vazia
         /// e caso o valor seja nulo, tenha apenas espaço ou seja vazio o valor da string, é retornado o mesmo valor que foi passado.
         /// </summary>
         /// <param name="value">Valor que será removido o que não é número</param>
@@ -91,7 +91,7 @@ namespace ZinfoFramework.Extensions
         /// <example>
         /// <code>
         /// var valor = "ABC123def456";
-        /// var somenteNumeros = valor.ToOnlyNumbers(); 
+        /// var somenteNumeros = valor.ToOnlyNumbers();
         /// // <c>somenteNumeros</c> terá o resultado "123456".
         /// </code>
         /// </example>
@@ -105,8 +105,8 @@ namespace ZinfoFramework.Extensions
         }
 
         /// <summary>
-        /// Retorna um conjunto de palavras que tenham a quantidade de letras maior ou igual ao valor passado no parâmetro <c>countLetter</c>. 
-        /// Caso só tenham palavras com a quantidade de letras menor do que o valor passado no parâmetro <c>countLetter</c> e retornado uma string vazia 
+        /// Retorna um conjunto de palavras que tenham a quantidade de letras maior ou igual ao valor passado no parâmetro <c>countLetter</c>.
+        /// Caso só tenham palavras com a quantidade de letras menor do que o valor passado no parâmetro <c>countLetter</c> e retornado uma string vazia
         /// e caso o valor passado seja nulo, tenha somente espaço ou seja vazio é retornado o mesmo valor que foi passado.
         /// </summary>
         /// <param name="value">Conjunto de palavras</param>
@@ -115,7 +115,7 @@ namespace ZinfoFramework.Extensions
         /// <example>
         /// <code>
         /// var valor = "Fulano de Tal da Silva";
-        /// var conjuntoDePalavras = valor.ToRemoveWords(4); 
+        /// var conjuntoDePalavras = valor.ToRemoveWords(4);
         /// // <c>conjuntoDePalavras</c> terá o resultado "Fulano Silva".
         /// </code>
         /// </example>
@@ -142,7 +142,7 @@ namespace ZinfoFramework.Extensions
         /// <example>
         /// <code>
         /// var valor = "Inconstitucionalissimamente";
-        /// var valorTruncado = valor.ToTruncateWithMaxLength(16); 
+        /// var valorTruncado = valor.ToTruncateWithMaxLength(16);
         /// // <c>valorTruncado</c> terá o resultado "Inconstitucional"
         /// </code>
         /// </example>
@@ -161,7 +161,7 @@ namespace ZinfoFramework.Extensions
         /// <example>
         /// <code>
         /// var valor = "21.000-000";
-        /// var valorSemCaracteresEspeciais = valor.ToWithoutSpecialCharacter(); 
+        /// var valorSemCaracteresEspeciais = valor.ToWithoutSpecialCharacter();
         /// // <c>valorSemCaracteresEspeciais</c> terá o resultado "21000000"
         /// </code>
         /// </example>
@@ -199,7 +199,7 @@ namespace ZinfoFramework.Extensions
         /// <example>
         /// <code>
         /// var valor = "framework";
-        /// var valorFormatado = valor.ToUpperCaseFirstLetter(); 
+        /// var valorFormatado = valor.ToUpperCaseFirstLetter();
         /// // <c>valorFormatado</c> terá o resultado "Framework"
         /// </code>
         /// </example>
@@ -218,7 +218,7 @@ namespace ZinfoFramework.Extensions
         /// <example>
         /// <code>
         /// var valor = "FrameworkZinfo";
-        /// var valorFormatado = valor.ToLowerCaseFirstLetter(); 
+        /// var valorFormatado = valor.ToLowerCaseFirstLetter();
         /// // <c>valorFormatado</c> terá o resultado "frameworkZinfo"
         /// </code>
         /// </example>
@@ -375,6 +375,165 @@ namespace ZinfoFramework.Extensions
             credencial.TryAdd("password", valorSplitado[1]);
 
             return credencial;
+        }
+
+        /// <summary>
+        /// Remove diacríticos da string.
+        /// </summary>
+        /// <param name="text">String alvo da operação.</param>
+        /// <returns>String após a operação.</returns>
+        public static string RemoveDiacritics(this string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return text;
+
+            text = text.Normalize(NormalizationForm.FormD);
+            var chars = text.Where(c => CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark).ToArray();
+            return new string(chars).Normalize(NormalizationForm.FormC);
+        }
+
+        /// <summary>
+        /// Remove espaços da string.
+        /// </summary>
+        /// <param name="s">String alvo da operação.</param>
+        /// <returns>String após a operação.</returns>
+        public static string RemoveSpaces(this string s)
+        {
+            return s.RemoveChars(' ');
+        }
+
+        /// <summary>
+        /// Remove caracteres específicos da string.
+        /// </summary>
+        /// <param name="s">String alvo da operação.</param>
+        /// <param name="chars">Array de caracteres que serão removidos da string.</param>
+        /// <returns>String após a operação.</returns>
+        public static string RemoveChars(this string s, params char[] chars)
+        {
+            var sb = new StringBuilder(s.Length);
+            foreach (char c in s.Where(c => !chars.Contains(c)))
+            {
+                sb.Append(c);
+            }
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Transforma a string para sua forma canônica.
+        /// </summary>
+        /// <param name="s">String alvo da operação.</param>
+        /// <returns>String após a operação.</returns>
+        public static string StrictCanonicalForm(this string s)
+        {
+            return s.RemoveDiacritics().OnlyAlfaNumeric().ToLower();
+        }
+
+        /// <summary>
+        /// Verifica se a ocorreu um 'match' com a string , utilizando forma canônica.
+        /// </summary>
+        /// <param name="s">String alvo da operação.</param>
+        /// <param name="pattern">Expressão regular.</param>
+        /// <returns>True se ocorreu o 'match'.</returns>
+        public static bool IsMatchCanonicalForm(this string s, string compare)
+        {
+            return s.StrictCanonicalForm() == compare.StrictCanonicalForm();
+        }
+
+        /// <summary>
+        /// Verifica se a ocorreu um 'match' com a string , utilizando expressões regulares.
+        /// </summary>
+        /// <param name="s">String alvo da operação.</param>
+        /// <param name="pattern">Expressão regular.</param>
+        /// <returns>True se ocorreu o 'match'.</returns>
+        public static bool IsMatch(this string s, string pattern)
+        {
+            var p = new Regex(pattern, RegexOptions.IgnoreCase);
+            var match = p.Match(s);
+            return match.Success;
+        }
+
+        /// <summary>
+        /// Retorna somente os números contidos na string.
+        /// </summary>
+        /// <param name="s">String alvo da operação.</param>
+        /// <returns>String após a operação.</returns>
+        public static string OnlyNumbers(this string s)
+        {
+            var arr = s.ToList();
+            return string.Concat(arr.Where(c => char.IsDigit(c)));
+        }
+
+        /// <summary>
+        /// Retorna somente os caracteres alfanuméricos contidos na string.
+        /// </summary>
+        /// <param name="s">String alvo da operação.</param>
+        /// <returns>String após a operação.</returns>
+        public static string OnlyAlfaNumeric(this string s)
+        {
+            var arr = s.ToList();
+            return string.Concat(arr.Where(c => char.IsLetterOrDigit(c)));
+        }
+
+        /// <summary>
+        /// Retorna a primeira palavra da string.
+        /// </summary>
+        /// <param name="source">String alvo da operação.</param>
+        /// <returns>String após a operação.</returns>
+        public static string FirstWord(this string source)
+        {
+            Match mt = Regex.Match(source ?? "", "(?<sel>[^ ]+)");
+            return mt.Groups["sel"].Value;
+        }
+
+        /// <summary>
+        /// Retorna a última palavra da string.
+        /// </summary>
+        /// <param name="source">String alvo da operação.</param>
+        /// <returns>String após a operação.</returns>
+        public static string LastWord(this string source)
+        {
+            Match mt = Regex.Match(source, "(?<sel>[^ ]+)$");
+            return mt.Groups["sel"].Value;
+        }
+
+        /// <summary>
+        /// Método que remove palavras da string.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="words"></param>
+        /// <returns>Sring após a operação</returns>
+        public static string RemoveWords(this string source, params string[] words)
+        {
+            var sb = new List<string>();
+
+            var splitted = source.Split(' ');
+
+            foreach (string s in splitted.Where(word => !words.Contains(word, StringComparer.CurrentCultureIgnoreCase)))
+            {
+                sb.Add(s);
+            }
+
+            return string.Join(" ", sb);
+        }
+
+        /// <summary>
+        /// Método que retorna um valor booleano indicando se a string informada contém informação diferente de vazio ou espaços.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns>true or false</returns>
+        public static bool HasValue(this string source)
+        {
+            return string.IsNullOrWhiteSpace(source) == false;
+        }
+
+        /// <summary>
+        /// Método que retorna um valor booleano indicando se a string informada contém vazio ou espaços.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns>true or false</returns>
+        public static bool IsEmpty(this string source)
+        {
+            return string.IsNullOrWhiteSpace(source) == true;
         }
     }
 }
