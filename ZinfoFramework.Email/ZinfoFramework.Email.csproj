@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Luiz Antonio</Authors>
+    <Company>ZinfoFramework</Company>
+  </PropertyGroup>
+	
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PackageProjectUrl>https://github.com/Luizinfo/ZinfoFramework</PackageProjectUrl>
+		<Description>Helper to send Email</Description>
+		<PackageReleaseNotes>--Start Version</PackageReleaseNotes>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\ProjetosZinfo\ZinfoFramework\ZinfoFramework.Email\ZinfoFramework.Email.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

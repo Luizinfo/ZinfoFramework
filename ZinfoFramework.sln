@@ -16,13 +16,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Exemples", "3-Exemples", "{8F8816C4-A5D1-4EF2-842D-935023E907F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZinfoFramework.Extensions", "ZinfoFramework.Extensions\ZinfoFramework.Extensions.csproj", "{50A5A97B-7B1C-48A9-8D61-3B9C3F3189DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZinfoFramework.Extensions", "ZinfoFramework.Extensions\ZinfoFramework.Extensions.csproj", "{50A5A97B-7B1C-48A9-8D61-3B9C3F3189DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZinfoFramework.Repository", "ZinfoFramework.Repository\ZinfoFramework.Repository.csproj", "{4DE58A62-55D0-4150-BB2D-F1FC0BF9A665}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZinfoFramework.Repository", "ZinfoFramework.Repository\ZinfoFramework.Repository.csproj", "{4DE58A62-55D0-4150-BB2D-F1FC0BF9A665}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZinfoFramework.Repository.EF", "ZinfoFramework.Repository.EF\ZinfoFramework.Repository.EF.csproj", "{380BD12D-8846-451E-AADE-D5D3E4485021}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZinfoFramework.Repository.EF", "ZinfoFramework.Repository.EF\ZinfoFramework.Repository.EF.csproj", "{380BD12D-8846-451E-AADE-D5D3E4485021}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZinfoFramework.Repository.EFTests", "ZinfoFramework.Repository.EF.MysqlTests\ZinfoFramework.Repository.EFTests.csproj", "{FBDA457B-40AA-4C41-8C89-4C2A6F0458AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZinfoFramework.Repository.EFTests", "ZinfoFramework.Repository.EF.MysqlTests\ZinfoFramework.Repository.EFTests.csproj", "{FBDA457B-40AA-4C41-8C89-4C2A6F0458AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZinfoFramework.Email", "ZinfoFramework.Email\ZinfoFramework.Email.csproj", "{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{FBDA457B-40AA-4C41-8C89-4C2A6F0458AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBDA457B-40AA-4C41-8C89-4C2A6F0458AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBDA457B-40AA-4C41-8C89-4C2A6F0458AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{4DE58A62-55D0-4150-BB2D-F1FC0BF9A665} = {737B3482-65A2-46E4-A829-12CC8EA9936E}
 		{380BD12D-8846-451E-AADE-D5D3E4485021} = {737B3482-65A2-46E4-A829-12CC8EA9936E}
 		{FBDA457B-40AA-4C41-8C89-4C2A6F0458AD} = {4ADF7BD4-FF51-464A-8F3F-910891DE1FB6}
+		{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0} = {737B3482-65A2-46E4-A829-12CC8EA9936E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0F34CC43-4A9A-40F6-821B-56A6FEA1794E}
