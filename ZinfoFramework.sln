@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31229.75
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-FrameWorks", "1-FrameWorks", "{737B3482-65A2-46E4-A829-12CC8EA9936E}"
 EndProject
@@ -24,7 +24,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZinfoFramework.Repository.E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZinfoFramework.Repository.EFTests", "ZinfoFramework.Repository.EF.MysqlTests\ZinfoFramework.Repository.EFTests.csproj", "{FBDA457B-40AA-4C41-8C89-4C2A6F0458AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZinfoFramework.Email", "ZinfoFramework.Email\ZinfoFramework.Email.csproj", "{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZinfoFramework.Email", "ZinfoFramework.Email\ZinfoFramework.Email.csproj", "{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZinfoFramework.OAuth2", "ZinfoFramework.OAuth2\ZinfoFramework.OAuth2.csproj", "{65FC3B33-2703-4C48-8000-8BE74304E621}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65FC3B33-2703-4C48-8000-8BE74304E621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65FC3B33-2703-4C48-8000-8BE74304E621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65FC3B33-2703-4C48-8000-8BE74304E621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65FC3B33-2703-4C48-8000-8BE74304E621}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{380BD12D-8846-451E-AADE-D5D3E4485021} = {737B3482-65A2-46E4-A829-12CC8EA9936E}
 		{FBDA457B-40AA-4C41-8C89-4C2A6F0458AD} = {4ADF7BD4-FF51-464A-8F3F-910891DE1FB6}
 		{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0} = {737B3482-65A2-46E4-A829-12CC8EA9936E}
+		{65FC3B33-2703-4C48-8000-8BE74304E621} = {737B3482-65A2-46E4-A829-12CC8EA9936E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0F34CC43-4A9A-40F6-821B-56A6FEA1794E}
