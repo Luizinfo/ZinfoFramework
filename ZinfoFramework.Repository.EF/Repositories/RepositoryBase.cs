@@ -17,6 +17,9 @@ namespace ZinfoFramework.Repository.EF.Repositories
             Context = context;
         }
 
+        /// <summary>
+        /// Método que adiciona um objeto ao banco de dados da aplicação.
+        /// </summary>
         public void Add(TEntity entity)
         {
             DbSet<TEntity> dbSet = Context.Set<TEntity>();
@@ -38,6 +41,9 @@ namespace ZinfoFramework.Repository.EF.Repositories
             Context.SaveChanges();
         }
 
+        /// <summary>
+        /// Método que apaga um objeto ao banco de dados da aplicação.
+        /// </summary>
         public void Delete(TEntity entity)
         {
             DbSet<TEntity> dbSet = Context.Set<TEntity>();
@@ -51,7 +57,7 @@ namespace ZinfoFramework.Repository.EF.Repositories
         }
 
         /// <summary>
-        /// Método que deleta um ou varios objetos no banco de dados da aplicação, mediante uma expressão LINQ.
+        /// Método que apaga um ou varios objetos no banco de dados da aplicação, mediante uma expressão LINQ.
         /// </summary>
         public void DeleteAll(Expression<Func<TEntity, bool>> filter = null)
         {
@@ -72,6 +78,9 @@ namespace ZinfoFramework.Repository.EF.Repositories
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Método que altera um objeto do banco de dados da aplicação.
+        /// </summary>
         public void Edit(TEntity entity)
         {
             DbSet<TEntity> dbSet = Context.Set<TEntity>();
@@ -80,6 +89,9 @@ namespace ZinfoFramework.Repository.EF.Repositories
             Context.SaveChanges();
         }
 
+        /// <summary>
+        /// Método que retorna uma lista de objetos do banco de dados da aplicação, mediante uma expressão LINQ e um orderBy.
+        /// </summary>
         public virtual List<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null)
         {
             DbSet<TEntity> dbSet = Context.Set<TEntity>();
@@ -101,6 +113,9 @@ namespace ZinfoFramework.Repository.EF.Repositories
             }
         }
 
+        /// <summary>
+        /// Método que retorna um objeto do banco de dados da aplicação.
+        /// </summary>
         public TEntity Get(long id)
         {
             DbSet<TEntity> dbSet = Context.Set<TEntity>();
@@ -108,6 +123,9 @@ namespace ZinfoFramework.Repository.EF.Repositories
             return dbSet.Find(id);
         }
 
+        /// <summary>
+        /// Método que verifica se existe um valor com o filtro passado.
+        /// </summary>
         public bool Existe(Expression<Func<TEntity, bool>> filter)
         {
             DbSet<TEntity> dbSet = Context.Set<TEntity>();
