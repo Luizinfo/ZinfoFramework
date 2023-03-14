@@ -14,12 +14,12 @@ namespace ZinfoFramework.EmailTest
         public void SendMailTest()
         {
             var emailConfig = new EmailConfig();
-            emailConfig.SMTPHost = "email-smtp.us-east-1.amazonaws.com";
-            emailConfig.From = "naoresponda@alliedtech.com.br";
+            emailConfig.SMTPHost = "";
+            emailConfig.From = "";
             emailConfig.Port = 587;
-            emailConfig.To = "luiz.almeida@alliedbrasil.com.br";
-            emailConfig.UserName = "AKIA5ZCAP7GY7UFODN4M";
-            emailConfig.Password = "BPxsQZ/yFbtR/Jah1qlPc/cIbm6ZEcVf5McdYzhhUUlY";
+            emailConfig.To = "";
+            emailConfig.UserName = "";
+            emailConfig.Password = "";
 
             var server = new EmailService(emailConfig);
 
