@@ -28,6 +28,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZinfoFramework.Email", "Zin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZinfoFramework.OAuth2", "ZinfoFramework.OAuth2\ZinfoFramework.OAuth2.csproj", "{65FC3B33-2703-4C48-8000-8BE74304E621}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZinfoFramework.EmailTest", "ZinfoFramework.EmailTest\ZinfoFramework.EmailTest.csproj", "{E2E18768-6F44-4822-ADEE-071C2FE7EF4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{65FC3B33-2703-4C48-8000-8BE74304E621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65FC3B33-2703-4C48-8000-8BE74304E621}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65FC3B33-2703-4C48-8000-8BE74304E621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2E18768-6F44-4822-ADEE-071C2FE7EF4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2E18768-6F44-4822-ADEE-071C2FE7EF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2E18768-6F44-4822-ADEE-071C2FE7EF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2E18768-6F44-4822-ADEE-071C2FE7EF4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{FBDA457B-40AA-4C41-8C89-4C2A6F0458AD} = {4ADF7BD4-FF51-464A-8F3F-910891DE1FB6}
 		{9A5BDF89-1197-4359-99FB-02EC7A8ADDB0} = {737B3482-65A2-46E4-A829-12CC8EA9936E}
 		{65FC3B33-2703-4C48-8000-8BE74304E621} = {737B3482-65A2-46E4-A829-12CC8EA9936E}
+		{E2E18768-6F44-4822-ADEE-071C2FE7EF4C} = {4ADF7BD4-FF51-464A-8F3F-910891DE1FB6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0F34CC43-4A9A-40F6-821B-56A6FEA1794E}

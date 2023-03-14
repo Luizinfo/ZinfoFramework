@@ -31,6 +31,7 @@ AppSettings:
     "Port": "xxx",
     "From": "xxx",
     "To": "xxx",
+    "UserName": "xxx"
     "Password": "xxx"
   },
   ...

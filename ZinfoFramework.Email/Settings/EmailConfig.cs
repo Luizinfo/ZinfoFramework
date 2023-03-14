@@ -26,6 +26,10 @@ namespace ZinfoFramework.Email.Settings
         /// </summary>
         public string To { get; set; }
         /// <summary>
+        /// Usuário do email de envio
+        /// </summary>
+        public string UserName { get; set; }
+        /// <summary>
         /// Senha do email de envio
         /// </summary>
         public string Password { get; set; }

@@ -34,7 +34,7 @@ namespace ZinfoFramework.Email.Implementations
             using (var mailCli = new SmtpClient(emailConfig.SMTPHost, emailConfig.Port))
             {
                 mailCli.EnableSsl = true;
-                mailCli.Credentials = new NetworkCredential(emailConfig.From, emailConfig.Password);
+                mailCli.Credentials = new NetworkCredential(emailConfig.UserName ?? emailConfig.From, emailConfig.Password);
 
                 var mail = new MailMessage();
                 mail.Subject = subject;
